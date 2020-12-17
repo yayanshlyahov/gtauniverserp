@@ -95,6 +95,15 @@ p.small {
   display: inline-block;
   margin-right: 4rem;
 }
+
+.icon-vk {
+  background: url(../img/vk.svg);
+}
+
+.icon-youtube {
+  background: url(../img/youtube.svg);
+}
+
 .icon:last-child {
   margin-right: 0;
 }

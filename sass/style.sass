@@ -1,0 +1,440 @@
+@font-face
+	font-family: "Segoe UI"
+	src: url("SegoeUI.ttf")
+
+@font-face
+	font-family: "Tw Cen MT"
+	src: url("Tw Cen MT Regular.ttf")
+
+html
+	font-size: 10px
+
+body
+	color: #fff
+	margin: 0
+	font-family: 'Segoe UI'
+	font-weight: normal
+	background-color: #292929
+
+h1, h2, h3, h4, h5, h6, p, ul, li
+	margin: 0
+	display: inline-block
+	padding: 0
+
+h1
+
+	font-size: 8.6rem
+	line-height: 9.5rem
+
+h2
+	font-size: 7.4rem
+	line-height: 9.8rem
+	font-weight: 300
+
+h3
+	font-weight: 300
+	font-size: 6.2rem
+	line-height: 8.3rem
+	&.pr
+		padding-right: 10rem
+
+h4
+	font-size: 2.6rem
+	line-height: 3.5rem
+	font-weight: 300
+
+p
+	font-size: 3.1rem
+	line-height: 4.2rem
+	font-weight: 300
+
+p.small
+	font-family: Segoe UI
+	font-style: normal
+	font-size: 2.0rem
+	line-height: 2.7rem
+	color: #E6E6E6
+
+.icon
+	width: 7rem
+	height: 7rem
+	border-radius: 50%
+	background-color: #F2F2F2
+	display: inline-block
+	margin-right: 4rem
+	&:last-child
+		margin-right: 0
+
+.b-grad
+	position: relative
+	&::after
+		position: absolute
+		left: 0
+		bottom: 0
+		width: 100%
+		height: 3px
+		background: linear-gradient(90deg, #FF0096 0%, #00FFFF 100%)
+		content: ''
+
+.container
+	max-width: 1151px
+	width: 100%
+	padding-left: 15px
+	padding-right: 15px
+	margin: 0 auto
+	box-sizing: border-box
+
+.row
+	display: flex
+	flex-wrap: wrap
+
+.btn
+	text-transform: uppercase
+	max-width: 42rem
+	width: 100%
+	height: 9.7rem
+	background-color: #ED1E79
+	border: none
+	font-size: 4.2rem
+	border-radius: 0
+	display: flex
+	align-items: center
+	justify-content: center 
+	&.small
+		max-width: 28rem
+		width: 100%
+		height: 4rem
+		font-size: 2.2rem
+
+a
+	color: #fff
+	text-decoration: none
+
+
+.header
+	padding: 36px 0
+	.container
+		max-width: 1656px
+		.header-body
+			.row
+				justify-content: space-between
+				align-items: center
+				.left
+					.logo
+						display: flex
+						align-items: center
+						a
+							margin-right: 24px
+							img
+								max-width: 7.2rem
+								width: 100%
+						span
+							text-transform: uppercase
+							font-size: 3.6rem
+							line-height: 1
+				.header-burger
+					display: none
+				.mid
+					ul
+						display: flex
+						li
+							position: relative
+							margin-right: 4rem
+							a
+								font-size: 3rem
+								line-height: 1
+								text-transform: uppercase
+
+							&.active:after
+								position: absolute
+								top: 50%
+								left: -10px
+								width: 0.5rem
+								height: 2.7rem
+								background-color: #ED1E79
+								content: ""
+								transform: translate(0, -50%)
+					.right
+						.icon
+							display: none
+								
+				.right
+					display: flex
+					justify-content: flex-end
+
+.spase
+	padding-top: 19rem
+	.container
+		display: flex
+		flex-direction: column
+		align-items: center
+		position: relative
+		.img-logo
+			max-width: 16rem
+			width: 100%
+			margin-bottom: 2.3rem
+			img
+				width: 100%
+		h1
+			font-family: Tw Cen MT 
+			color: #F2F2F2
+			margin-bottom: 4.7rem
+			text-transform: uppercase
+		h2
+			color: #fff
+		.btn
+			margin-top: 9.8rem
+
+		
+.play
+	padding-top: 31rem
+	padding-bottom: 36rem
+	.container
+		h3
+			margin-bottom: 4.8rem
+			text-transform: uppercase
+		p
+			margin-bottom: 2rem
+		.row
+			justify-content: space-between
+			.license
+				padding: 2.2rem 2.5rem 2.2rem 2rem
+				background-color: #1A1A1A
+				width: calc(100% / 3 - 5.3rem)
+				box-sizing: border-box
+				h4
+					margin-bottom: 2rem
+					text-transform: uppercase
+				p
+					margin-bottom: 1.3rem
+				&:first-child
+					a
+						background-color: #EA1FDB
+
+.why
+	padding-bottom: 8.8rem
+	.container
+		h3
+			margin-bottom: 3rem
+			text-transform: uppercase
+		p
+			margin-bottom: 2rem
+		.row
+			justify-content: space-between
+			.left
+				background-color: #000
+				max-width: calc(50% - 6rem)
+				width: 100%
+				box-sizing: border-box
+				video
+					width: 100%
+			.right
+				background-color: #1A1A1A
+				max-width: calc(50% - 6rem)
+				width: 100%
+				padding: 2.2rem 2.5rem 2.2rem 2rem
+				position: relative
+				box-sizing: border-box
+				h4
+					text-transform: uppercase
+				.server
+					display: flex
+					justify-content: space-between
+					align-items: center
+					margin-top: 6rem
+					margin-bottom: 1.8rem
+					p
+						line-height: 1
+						margin-bottom: 0
+
+					span
+						font-size: 2rem
+						font-weight: 300
+
+				.p-bar
+					width: 100%
+					height: 1rem
+					display: block
+					background-color: #00FFFF
+					position: relative
+					z-index: 1
+					.p-line
+						position: absolute
+						left: 0
+						top: 0
+						width: 50%
+						height: 100%
+						display: block
+						background-color: #ED1E79
+						clip-path: polygon(0 0, 100% 0%, 97% 100%, 0 100%)
+						z-index: 2
+
+.footer
+	background-color: #1A1A1A
+	padding: 2.8rem 0
+	width: 100%
+	.container
+		position: relative
+		display: flex
+		justify-content: center
+		.icon
+			width: 4rem
+			height: 4rem
+
+@media(max-width: 1440px)
+	html
+		font-size: 9px
+
+@media(max-width: 1280px)
+	html
+		font-size: 8px
+	.container
+		max-width: 1024px
+
+@media(max-width: 1024px)
+	html
+		font-size: 7px
+	.container
+		max-width: 970px
+
+@media(max-width: 768px)
+	.container
+		max-width: none
+	.header
+		position: fixed
+		width: 100%
+		top: 0
+		left: 0
+		z-index: 50
+		background-color: #292929
+		padding: 2rem 0
+		&::after
+			position: absolute
+			left: 0
+			bottom: 0
+			width: 100%
+			height: 3px
+			background: linear-gradient(90deg, #FF0096 0%, #00FFFF 100%)
+			content: ''
+		.container
+			.header-body
+				position: relative
+				.row
+					.header-burger
+						display: block
+						position: relative
+						min-width: 40px
+						margin-left: auto
+						max-width: 40px
+						height: 20px
+						&:before, &:after
+							background-color: #fff
+							content: ""
+							position: absolute
+							width: 100%
+							height: 2px
+							left: 0
+							transition: all .3s
+						&:before
+							top: 0
+						&:after
+							bottom: 0
+						&.active span 
+							opacity: 0
+						&.active:before
+							transform: rotate(45deg)
+							top: 8px
+						&.active:after
+							transform: rotate(-45deg)
+							bottom: 9px
+						span
+							background-color: #fff
+							position: absolute
+							top: 50%
+							margin-top: -1px
+							left: 0
+							width: 100%
+							height: 2px
+							transition: all .3s
+							&.active
+								transform: scale(0)
+					.mid
+						position: fixed
+						left: 0
+						top: 0
+						width: 100%
+						max-width: 350px
+						height: 100vh
+						background-color: #292929
+						transition: all .3s
+						z-index: -1
+						padding: 150px 20px 20px 20px
+						transform: translate(-100%, 0)
+						box-sizing: border-box
+
+						&.active
+							transform: translate(0%, 0)
+						ul
+							display: flex
+							flex-direction: column
+							li
+								margin-bottom: 3rem
+						.right
+							position: absolute
+							left: 20px
+							bottom: 20px
+							.icon
+								display: block
+					& > .right
+						display: none
+	.play .container .row .license
+		width: calc(100% / 3 - 2rem)
+	.why .container .row 
+		.right, .left
+			max-width: calc(100% / 2 - 1rem )
+@media(max-width: 560px)
+	.header .container .header-body .row .mid
+		max-width: 100vw
+
+	h1
+		font-size: 6rem
+		line-height: 1
+
+	h2
+		font-size: 4rem
+		line-height: 1.5
+
+	h3
+		font-size: 4.2rem
+		line-height: 1.5
+		&.pr
+			padding-right: 6rem
+
+	h4
+		font-size: 2.6rem
+		line-height: 3.5rem
+		font-weight: 300
+
+	p
+		font-size: 2.4rem
+		line-height: 1.2
+
+	.btn
+		max-width: 36rem
+		height: 8rem
+		font-size: 3.2rem
+		&.small
+			max-width: 28rem
+			width: 100%
+			height: 4rem
+			font-size: 2.2rem
+
+
+	.play .container .row .license
+		width: 100%
+		margin-bottom: 3rem
+
+	.why .container .row 
+		.right, .left
+			max-width: 100%
+			margin-bottom: 3rem

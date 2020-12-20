@@ -101,6 +101,10 @@ p.small {
   background: url(../img/vk.svg);
 }
 
+.icon-unicoin {
+  background: url(../img/unicoin.svg);
+}
+
 .icon-youtube {
   background: url(../img/youtube.svg);
 }
@@ -174,6 +178,11 @@ p.small {
 }
 
 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+input[type=submit] {
   color: #fff;
   text-decoration: none;
 }
@@ -373,6 +382,10 @@ a {
   background-color: #ea1fdb;
 }
 
+.donat .container .row .license input[type=submit]:hover {
+  background-color: #ea1fdb;
+}
+
 input[type=email], input[type=number] {
   border: none;
   border-bottom: 2px solid #ea1fdb;
@@ -387,7 +400,15 @@ input[type=email], input[type=number] {
 .universe-cash {
   font-size: 3rem;
   font-weight: 300;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
+  vertical-align: middle;
+}
+
+.unicoin-text {
+  height: 6rem;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
 }
 
 .bottom-container {

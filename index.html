@@ -9,7 +9,7 @@
       function calculateUniverse(){
         var cashToPay = document.getElementById('cash').value;
         var universe = Math.round(cashToPay * 1.2, 1);
-        document.getElementById('universeCash').innerText = universe+'$';
+        document.getElementById('universeCash').innerHtml = universe;
       }
       let timerId = setInterval(() => calculateUniverse(), 500);
     </script>
@@ -131,17 +131,27 @@
             <br />
             <p class="universe-cash">Cash:</p><input type="number" id="cash" value="10">
             <br />
-            <span id="universeCash" class="universe-cash">12$</span>
+            <div><span id="universeCash" class="universe-cash">12</span><img src="img/unicoin.svg" class="unicoin-text"></div>
             <br />
             <a class="btn small" style="font-size: 14px; margin-top: 2rem;">Пополнить</a>
           </div>
           <div class="license b-grad">
             <h4>Помочь проекту</h4>
             <br />
-            <p class="small">Наш игровой проект использует внутреннюю игровую валюту «Universe Coin». Вы можете пополнить игровой счет, Вы можете ниже.</p>
-            <input type="number">
+            <p class="small">Каждый день команда проекта GTA Universe RP активно работает над улучшением проекта и добавлением новых интересных игровых систем, которые позволят Вам больше погрузиться в увлекательный мир ролевой игры. Вы может помочь проекту стать еще лучше!</p>
+            <!-- <input type="number">
             <br />
-            <a class="btn small" style="font-size: 14px;">Кинуть денег на печеньки!</a>
+            <a class="btn small" style="font-size: 14px;">Кинуть денег на печеньки!</a> -->
+            <form action="https://unitpay.money/pay/364221-18754">
+              <br />
+              <p class="universe-cash">E-mail:</p><input type="email" name="account" placeholder="Напиши свой e-mail здесь!" >
+              <br />
+              <p class="universe-cash">Cash:</p><input type="number" name="sum" value="50">
+              <input type="hidden" name="desc" value="Описание платежа">
+              <input type="hidden" name="signature" value="870eb617e3d081fbdc07385f7ff07dea51d6168719a4688a1f7f9fdad583c0d1">
+              <br />
+              <input class="btn small" type="submit" value="Оплатить" style="font-size: 14px; margin-top: 8rem;">
+            </form>
           </div>
         </div>
       </div>

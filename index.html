@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="icon" href="img/icon.ico">
     <link rel="stylesheet" href="css/style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -11,7 +12,26 @@
         var universe = Math.round(cashToPay * 1.2, 1);
         document.getElementById('universeCash').innerHtml = universe;
       }
-      let timerId = setInterval(() => calculateUniverse(), 500);
+      let timerIdCalc = setInterval(() => calculateUniverse(), 500);
+
+      function drawLine(count){
+        var online = document.getElementById('online');
+        var percents = count / 255 * 100;
+        online.style.width = percents;
+      }
+
+      function httpGetAsync(){
+          var theUrl = 'https://s1.gtauniverserp.com:2777/requestClients';
+          var xmlHttp = new XMLHttpRequest();
+          xmlHttp.onreadystatechange = function() { 
+              if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
+                drawLine(JSON.parse(xmlHttp.responseText)['clients'].length);
+              }
+          }
+          xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+          xmlHttp.send(null);
+      }
+      let timerIdOnline = setInterval(() => httpGetAsync(), 5000);
     </script>
   </head>
   <body>
@@ -46,7 +66,7 @@
                   <a href="#donat">донат</a>
                 </li>
                 <li>
-                  <a href="#">контакты</a>
+                  <a href="#contacts">контакты</a>
                 </li>
               </ul>
               <div class="right">
@@ -80,8 +100,9 @@
         <p>Сервер дает раскрыть потенциал всем ролевикам и ценителям жанра, создающим вокруг себя/своего коллектива собственную Вселенную. Задача проекта – создание комфортабельной среды для игроков с их инициаторскими способностями, а также их реализацией. Современная игровая площадка дает новые ощущения и открывает абсолютно другой взгляд на жанр и все вытекающие из него формации.</p>
         <div class="row">
           <div class="left b-grad">
-            <video controls="controls">
-              <source src="#" type="video/mp4" />
+              <iframe width="100%" height="310"
+                src="https://www.youtube.com/embed/-oLyAezMVpY?autoplay=0&mute=1&controls=0">
+              </iframe>
             </video>
           </div>
           <div class="right b-grad">
@@ -91,7 +112,7 @@
               <span>255</span>
             </div>
             <div class="p-bar">
-              <div class="p-line"></div>
+              <div class="p-line" id="online"></div>
             </div>
           </div>
         </div>
@@ -123,32 +144,53 @@
       <div class="container">
         <h3 class="b-grad pr">ДОНАТ ПРОЕКТА</h3>
         <div class="row">
-          <div class="license b-grad">
-            <h4>Пополнить баланс</h4>
-            <br />
-            <p class="small">Наш игровой проект использует внутреннюю игровую валюту «Universe Coin». Вы можете пополнить игровой счет, Вы можете ниже.</p>
-            <p class="universe-cash">E-mail:</p><input type="email" placeholder="Напиши свой e-mail здесь!" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-            <br />
-            <p class="universe-cash">Cash:</p><input type="number" id="cash" value="10">
-            <br />
-            <div><span id="universeCash" class="universe-cash">12</span><img src="img/unicoin.svg" class="unicoin-text"></div>
-            <br />
-            <a class="btn small" style="font-size: 14px; margin-top: 2rem;">Пополнить</a>
+          <div class="tabs">
+            <h4 onclick="openCity('player')" id='player-button' class="tab">Пополнить баланс</h4>
+            <h4 onclick="openCity('free')" id='free-button' style="float:right; background-color: #ea1fdb;" class="tab">Помочь проекту</h4>
+            <div class="license b-grad cash" id="player">
+              <br />
+              <p class="small">Наш игровой проект использует внутреннюю игровую валюту «Universe Coin». Вы можете пополнить игровой счет, Вы можете ниже.</p>
+              <p class="universe-cash">E-mail:</p><input type="email" placeholder="Напиши свой e-mail здесь!" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+              <br />
+              <p class="universe-cash">Cash:</p><input type="number" id="cash" value="10">
+              <br />
+              <div><span id="universeCash" class="universe-cash">12</span><img src="img/unicoin.svg" class="unicoin-text"></div>
+              <br />
+              <a class="btn small" style="font-size: 14px; margin-top: 2rem;">Пополнить</a>
+            </div>
+            <div class="license b-grad cash" id="free" style="display: none;">
+              <br />
+              <p class="small">Каждый день команда проекта GTA Universe RP активно работает над улучшением проекта и добавлением новых интересных игровых систем, которые позволят Вам больше погрузиться в увлекательный мир ролевой игры. Вы может помочь проекту стать еще лучше!</p>
+              <form action="https://unitpay.money/pay/364221-18754">
+                <p class="universe-cash">E-mail:</p><input type="email" name="account" placeholder="Напиши свой e-mail здесь!" >
+                <br />
+                <p class="universe-cash">Cash:</p><input type="number" name="sum" value="50">
+                <input type="hidden" name="desc" value="помощь проекту gtauniverserp">
+                <input type="hidden" name="signature" value="3c8721803ca381393a1cd143d5310361">
+                <br />
+                <br />
+                <input class="btn small" type="submit" value="Оплатить" style="font-size: 14px; margin-top: 8rem;">
+              </form>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact" id="contacts">
+      <div class="container">
+        <h3 class="b-grad pr">Контакты</h3>
+        <div class="row">
           <div class="license b-grad">
-            <h4>Помочь проекту</h4>
+            <h4>Установите GTA V</h4>
+            <p>Приобретите лицензионную версию Grand theft auto V</p>
             <br />
-            <p class="small">Каждый день команда проекта GTA Universe RP активно работает над улучшением проекта и добавлением новых интересных игровых систем, которые позволят Вам больше погрузиться в увлекательный мир ролевой игры. Вы может помочь проекту стать еще лучше!</p>
-            <form action="https://unitpay.money/pay/364221-18754">
-              <br />
-              <p class="universe-cash">E-mail:</p><input type="email" name="account" placeholder="Напиши свой e-mail здесь!" >
-              <br />
-              <p class="universe-cash">Cash:</p><input type="number" name="sum" value="50">
-              <input type="hidden" name="desc" value="помощь проекту gtauniverserp">
-              <input type="hidden" name="signature" value="3c8721803ca381393a1cd143d5310361">
-              <br />
-              <input class="btn small" type="submit" value="Оплатить" style="font-size: 14px; margin-top: 8rem;">
-            </form>
+            <p class="universe-cash">Поддержка - support@gtauniverserp.com</p>
+            <p class="universe-cash">Сотрудничество – info.faq@gtauniverserp.com</p>
+            <div class="middle">
+              <a class="icon icon-vk" href="https://vk.com/gtauniverseteam"></a>
+              <a class="icon icon-youtube" href="https://www.youtube.com/channel/UC4yKUwXgWUOGPZrn1i7h1uw"></a>
+              <a class="icon icon-discord" href="https://discord.gg/BRa7cbyYB6"></a>
+            </div>
           </div>
         </div>
       </div>
@@ -164,4 +206,19 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="js/script.js"></script>
   </body>
+  <script>
+    function openCity(cityName) {
+      var i;
+      var x = document.getElementsByClassName("cash");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      x = document.getElementsByClassName("tab");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.background = "#ea1fdb";
+      }
+      document.getElementById(cityName).style.display = "block";
+      document.getElementById(cityName+"-button").style.background = "#1a1a1a";  
+    }
+    </script>
 </html>

@@ -9,14 +9,14 @@
     <script>
       function calculateUniverse(){
         var cashToPay = document.getElementById('cash').value;
-        var universe = Math.round(cashToPay * 1.2, 1);
+        var universe = Math.round(cashToPay * 1.0, 1);
         document.getElementById('universeCash').innerHtml = universe;
       }
       let timerIdCalc = setInterval(() => calculateUniverse(), 500);
 
       function drawLine(count){
         var online = document.getElementById('online');
-        var percents = count / 255 * 100;
+        var percents = count / 1500 * 100;
         online.style.width = percents;
       }
 
@@ -31,6 +31,7 @@
           xmlHttp.open("GET", theUrl, true); // true for asynchronous 
           xmlHttp.send(null);
       }
+      httpGetAsync()
       let timerIdOnline = setInterval(() => httpGetAsync(), 5000);
     </script>
   </head>
@@ -60,7 +61,7 @@
                   <a href="#">правила</a>
                 </li>
                 <li>
-                  <a href="#">форум</a>
+                  <a href="http://forum.gtauniverserp.com">форум</a>
                 </li>
                 <li>
                   <a href="#donat">донат</a>
@@ -101,7 +102,7 @@
         <div class="row">
           <div class="left b-grad">
               <iframe width="100%" height="310"
-                src="https://www.youtube.com/embed/-oLyAezMVpY?autoplay=0&mute=1&controls=0">
+                src="https://www.youtube.com/embed/-oLyAezMVpY?autoplay=0&mute=0&controls=0">
               </iframe>
             </video>
           </div>
@@ -109,7 +110,7 @@
             <h4>наш онлайн</h4>
             <div class="server">
               <p>сервер</p>
-              <span>255</span>
+              <span>1500</span>
             </div>
             <div class="p-bar">
               <div class="p-line" id="online"></div>
@@ -144,7 +145,7 @@
       <div class="container">
         <h3 class="b-grad pr">ДОНАТ ПРОЕКТА</h3>
         <div class="row">
-          <div class="tabs">
+          <div class="tabs middle">
             <h4 onclick="openCity('player')" id='player-button' class="tab">Пополнить баланс</h4>
             <h4 onclick="openCity('free')" id='free-button' style="float:right; background-color: #ea1fdb;" class="tab">Помочь проекту</h4>
             <div class="license b-grad cash" id="player">
@@ -180,16 +181,15 @@
       <div class="container">
         <h3 class="b-grad pr">Контакты</h3>
         <div class="row">
-          <div class="license b-grad">
-            <h4>Установите GTA V</h4>
-            <p>Приобретите лицензионную версию Grand theft auto V</p>
-            <br />
-            <p class="universe-cash">Поддержка - support@gtauniverserp.com</p>
-            <p class="universe-cash">Сотрудничество – info.faq@gtauniverserp.com</p>
-            <div class="middle">
-              <a class="icon icon-vk" href="https://vk.com/gtauniverseteam"></a>
-              <a class="icon icon-youtube" href="https://www.youtube.com/channel/UC4yKUwXgWUOGPZrn1i7h1uw"></a>
-              <a class="icon icon-discord" href="https://discord.gg/BRa7cbyYB6"></a>
+          <div class="middle">
+            <div class="license b-grad">
+              <p class="universe-cash">Поддержка - support@gtauniverserp.com</p>
+              <p class="universe-cash">Сотрудничество – info.faq@gtauniverserp.com</p>
+              <div class="middle">
+                <a class="icon icon-vk" href="https://vk.com/gtauniverseteam"></a>
+                <a class="icon icon-youtube" href="https://www.youtube.com/channel/UC4yKUwXgWUOGPZrn1i7h1uw"></a>
+                <a class="icon icon-discord" href="https://discord.gg/BRa7cbyYB6"></a>
+              </div>
             </div>
           </div>
         </div>

@@ -302,6 +302,11 @@ input[type=submit] {
   margin-bottom: 4.7rem;
   text-transform: uppercase;
 }
+
+span {
+  font-family: Tw Cen MT;
+}
+
 .spase .container h2 {
   color: #fff;
 }
@@ -345,6 +350,12 @@ input[type=submit] {
   background-color: #ea1fdb;
 }
 
+.middle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .contact {
   height: calc(100vh - 20vh);
   box-sizing: border-box;
@@ -366,7 +377,7 @@ input[type=submit] {
 .contact .container .row .license {
   padding: 2.2rem 2.5rem 2.2rem 2rem;
   background-color: #1a1a1a;
-  width: calc(100% / 2);
+  width: calc(90%);
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -436,11 +447,25 @@ input[type=email], input[type=number] {
   border: none;
   border-bottom: 2px solid #ea1fdb;
   background: transparent;
+  outline: none;
   font-size: 3rem;
   font-weight: 300;
   color: #fff;
   width: calc(100% - 2.2rem);
   margin-bottom: 2rem;
+}
+
+/* Для Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+/* Для Firefox */
+input[type=number]{
+  -moz-appearance: textfield;
 }
 
 .universe-cash {
